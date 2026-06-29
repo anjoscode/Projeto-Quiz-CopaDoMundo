@@ -26,7 +26,7 @@ export default function Pergunta3() {
   };
 
   return (
-    // Área principal que organiza tudo na tela
+    // Container principal da tela
     <View style={styles.container}>
       
       {/* Mostra em qual pergunta o aluno está */}
@@ -35,7 +35,7 @@ export default function Pergunta3() {
       {/* Imagem ilustrativa da pergunta */}
       <Image source={require('../../assets/images/copadomundo2010.png')} style={styles.imagem} />
 
-      {/* Pergunta do roteiro sobre a Copa */}
+      {/* Enunciado da questão */}
       <Text style={styles.pergunta}>Qual seleção conquistou o título da Copa do Mundo de 2010, na África do Sul?</Text>
       
       {/* Opções de resposta: se for a correta, passa true, se não, passa false */}
@@ -61,17 +61,38 @@ export default function Pergunta3() {
 
 // Estilos da tela
 const styles = StyleSheet.create({
-  // Fundo e alinhamento central
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#E8F5E9', padding: 20 },
+  container: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    backgroundColor: '#E8F5E9', 
+    padding: 20 
+  },
   
   // Contador em destaque
-  contador: { fontSize: 24, color: '#000000', fontWeight: 'bold', marginBottom: 20 },
+  contador: { 
+    fontSize: 24, 
+    color: '#000000', 
+    fontWeight: 'bold', 
+    marginBottom: 20 
+  },
   
   // Tamanho e ajuste da imagem
-  imagem: { width: '95%', height: 350, marginBottom: 30, resizeMode: 'contain' },
+  imagem: { 
+    width: '95%', 
+    height: 350, 
+    marginBottom: 30, 
+    resizeMode: 'contain' 
+  },
   
   // Texto da pergunta
-  pergunta: { fontSize: 24, fontWeight: 'bold', marginBottom: 40, textAlign: 'center', color: '#1f2937' },
+  pergunta: { 
+    fontSize: 24, 
+    fontWeight: 'bold', 
+    marginBottom: 40, 
+    textAlign: 'center', 
+    color: '#1f2937' 
+  },
   
   // Formato dos botões
   botao: { 
@@ -89,5 +110,10 @@ const styles = StyleSheet.create({
   },
   
   // Estilo do texto dentro dos botões
-  textoBotao: { color: '#ffffff', fontSize: 16, fontWeight: 'bold', textAlign: 'center' },
+  textoBotao: { 
+    color: '#ffffff', 
+    fontSize: 16, 
+    fontWeight: 'bold', 
+    textAlign: 'center' 
+  },
 });

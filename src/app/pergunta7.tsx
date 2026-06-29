@@ -34,12 +34,12 @@ export default function Pergunta7() {
       {/* Imagem ilustrativa da pergunta */}
       <Image source={require('../../assets/images/seleção brasileira.png')} style={styles.imagem} />
 
-      {/* Pergunta do quiz */}
+      {/* Enunciado da questão */}
       <Text style={styles.pergunta}>
         O Brasil é o único país a ter participado de todas as edições da Copa do Mundo. Quantas vezes a seleção brasileira já disputou o torneio?
       </Text>
       
-      {/* Botões de resposta: passam true para acerto ou false para erro */}
+      {/* Opções de resposta: se for a correta, passa true, se não, passa false */}
       <TouchableOpacity style={styles.botao} onPress={() => responder(false)}>
         <Text style={styles.textoBotao}>A) 20 vezes</Text>
       </TouchableOpacity>
@@ -63,16 +63,38 @@ export default function Pergunta7() {
 // Estilização da tela seguindo o padrão unificado
 const styles = StyleSheet.create({
   // Fundo e alinhamento dos elementos
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#EFF6FF', padding: 20 },
+  container: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    backgroundColor: '#EFF6FF', 
+    padding: 20 
+  },
   
   // Estilo do contador de perguntas
-  contador: { fontSize: 24, color: '#000000', fontWeight: 'bold', marginBottom: 20 },
+  contador: { 
+    fontSize: 24, 
+    color: '#000000', 
+    fontWeight: 'bold', 
+    marginBottom: 20 
+  },
   
   // Ajustes de tamanho e aparência da imagem
-  imagem: { width: '95%', height: 350, marginBottom: 30, resizeMode: 'contain' },
+  imagem: { 
+    width: '95%', 
+    height: 350, 
+    marginBottom: 30, 
+    resizeMode: 'contain' 
+  },
   
   // Texto da pergunta principal
-  pergunta: { fontSize: 24, fontWeight: 'bold', marginBottom: 40, textAlign: 'center', color: '#1f2937' },
+  pergunta: { 
+    fontSize: 24, 
+    fontWeight: 'bold', 
+    marginBottom: 40, 
+    textAlign: 'center', 
+    color: '#1f2937' 
+  },
   
   // Estilo visual dos botões
   botao: { 
@@ -90,5 +112,10 @@ const styles = StyleSheet.create({
   },
   
   // Texto dentro dos botões
-  textoBotao: { color: '#ffffff', fontSize: 16, fontWeight: 'bold', textAlign: 'center' },
+  textoBotao: { 
+    color: '#ffffff', 
+    fontSize: 16, 
+    fontWeight: 'bold', 
+    textAlign: 'center' 
+  },
 });

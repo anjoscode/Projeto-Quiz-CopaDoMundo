@@ -61,16 +61,38 @@ export default function Pergunta2() {
 
 // Estilos da tela
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#ECEFF1', padding: 20 },
+  container: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    backgroundColor: '#ECEFF1', 
+    padding: 20 
+  },
   
   // Contador em destaque
-  contador: { fontSize: 24, color: '#000000', fontWeight: 'bold', marginBottom: 20 },
+  contador: { 
+    fontSize: 24, 
+    color: '#000000', 
+    fontWeight: 'bold', 
+    marginBottom: 20 
+  },
   
   // Imagem ajustada
-  imagem: { width: '95%', height: 350, marginBottom: 30, resizeMode: 'contain' },
+  imagem: { 
+    width: '95%', 
+    height: 350, 
+    marginBottom: 30, 
+    resizeMode: 'contain' 
+  },
   
   // Texto da pergunta
-  pergunta: { fontSize: 24, fontWeight: 'bold', marginBottom: 40, textAlign: 'center', color: '#1f2937' },
+  pergunta: { 
+    fontSize: 24, 
+    fontWeight: 'bold', 
+    marginBottom: 40, 
+    textAlign: 'center', 
+    color: '#1f2937' 
+  },
   
   // Formato dos botões
   botao: { 
@@ -88,5 +110,10 @@ const styles = StyleSheet.create({
   },
   
   // Estilo do texto dentro dos botões
-  textoBotao: { color: '#ffffff', fontSize: 16, fontWeight: 'bold', textAlign: 'center' },
+  textoBotao: { 
+    color: '#ffffff', 
+    fontSize: 16, 
+    fontWeight: 'bold', 
+    textAlign: 'center' 
+  },
 });

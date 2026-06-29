@@ -1,31 +1,34 @@
-// Importação dos componentes necessários para a interface e navegação
-import { ImageBackground, StyleSheet, Text, TouchableOpacity } from 'react-native';
+// Importação de dependências
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { router } from 'expo-router';
 
+// Tela de boas-vindas do quiz
 export default function TelaInicial() {
   
-  // Função que direciona o usuário para a primeira pergunta do quiz
+  // Direciona o usuário para a primeira pergunta
   const comecarQuiz = () => {
     router.push('/pergunta1');
   };
 
   return (
-    // Define a imagem de fundo utilizando o componente ImageBackground
     <ImageBackground 
       source={require('../../assets/images/copadomundo2026.png')} 
       style={styles.container}
-      // Ajusta o estilo da imagem para preencher todo o componente
       imageStyle={styles.imagemFundo} 
       resizeMode="cover" 
     >
+      {/* Camada para garantir contraste do texto sobre a imagem */}
+      <View style={styles.overlay} />
       
-      {/* Título principal do aplicativo */}
+      {/* Título principal */}
       <Text style={styles.titulo}>Copa do Mundo</Text>
       
-      {/* Descrição do objetivo do quiz */}
-      <Text style={styles.subtitulo}>Teste seus conhecimentos e veja se você conhece mesmo sobre a Copa do Mundo!</Text>
+      {/* Breve descrição do quiz */}
+      <Text style={styles.subtitulo}>
+        Teste seus conhecimentos e veja se você conhece mesmo sobre a Copa do Mundo!
+      </Text>
       
-      {/* Botão de navegação que chama a função de início do jogo */}
+      {/* Botão de ação para iniciar */}
       <TouchableOpacity style={styles.botao} onPress={comecarQuiz}>
         <Text style={styles.textoBotao}>INICIAR JOGO</Text>
       </TouchableOpacity>
@@ -34,21 +37,30 @@ export default function TelaInicial() {
   );
 }
 
-// Estilos aplicados à tela
+// Folha de estilos
 const styles = StyleSheet.create({
+  // Container centralizado que ocupa a tela toda
   container: { 
-    flex: 1, // Faz o container ocupar todo o espaço da tela
-    justifyContent: 'center', // Centraliza os elementos verticalmente
-    alignItems: 'center', // Centraliza os elementos horizontalmente
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center', 
     backgroundColor: '#000000',
     padding: 24
   },
+  
+  // Overlay escurecido para melhorar o contraste
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0,0,0,0.4)', 
+  },
+
+  // Ajustes da imagem de fundo
   imagemFundo: {
-    // Configurações para a imagem ocupar a tela inteira com opacidade
     width: '100%',
     height: '100%',
-    opacity: 0.65,
   },
+  
+  // Estilo do título
   titulo: { 
     fontSize: 44, 
     fontWeight: 'bold', 
@@ -56,11 +68,12 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     textAlign: 'center',
     letterSpacing: 0.8,
-    // Aplica sombra para melhorar a visibilidade do texto sobre a imagem
     textShadowColor: '#000000', 
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 6,
   },
+  
+  // Estilo do subtítulo
   subtitulo: { 
     fontSize: 18, 
     lineHeight: 26,
@@ -73,20 +86,23 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 4,
   },
+  
+  // Botão "Iniciar Jogo"
   botao: { 
-    backgroundColor: '#eab308', // Cor de destaque do botão
+    backgroundColor: '#eab308', 
     paddingVertical: 18,
     paddingHorizontal: 50,
-    borderRadius: 30, // Arredonda as bordas do botão
+    borderRadius: 30, 
     width: '85%', 
     alignItems: 'center',
-    // Adiciona efeitos de sombra para dar profundidade
     elevation: 4,
     shadowColor: '#000000', 
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
   },
+  
+  // Texto do botão
   textoBotao: { 
     color: '#1e293b', 
     fontSize: 18, 

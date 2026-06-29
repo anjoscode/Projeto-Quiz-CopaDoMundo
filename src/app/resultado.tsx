@@ -28,8 +28,11 @@ export default function Resultado() {
 
   // Função que escolhe a imagem de fundo baseada na pontuação
   const obterImagemFundo = () => {
-    if (acertos >= 7) { 
+    if (acertos === 10) {
       return require('../../assets/images/ronaldo2002.png');
+    } else if (acertos >= 7) { 
+      // Neymar para 7, 8 ou 9 acertos
+      return require('../../assets/images/neymar10.png');
     } else if (acertos >= 4) { 
       return require('../../assets/images/mbappe2022.png');
     } else { 
@@ -83,12 +86,14 @@ const styles = StyleSheet.create({
     padding: 20,
     flexDirection: 'column', 
   },
+  
   // Ajuste de opacidade da imagem de fundo
   imagemFundo: {
     opacity: 0.80, 
     width: '100%',
     height: '100%',
   },
+  
   // Título da tela
   titulo: { 
     fontSize: 36, 
@@ -101,6 +106,7 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 6,
   },
+  
   // Estilo do feedback
   mensagemFeedback: {
     fontSize: 18,
@@ -115,6 +121,7 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 4,
   },
+  
   // Estilo da caixa de placar
   cardPlacar: {
     backgroundColor: '#ffffff',
@@ -124,9 +131,11 @@ const styles = StyleSheet.create({
     elevation: 5, 
     marginBottom: 25,
   },
+  
   // Texto de acertos e erros
   textoAcertos: { fontSize: 20, color: '#10b981', fontWeight: 'bold', marginBottom: 10 },
   textoErros: { fontSize: 20, color: '#ef4444', fontWeight: 'bold' },
+  
   // Botão de jogar novamente
   botao: {
     backgroundColor: '#3b82f6',
@@ -141,6 +150,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
+  
   // Texto dentro do botão
   textoBotao: {
     color: '#ffffff',
